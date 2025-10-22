@@ -1,15 +1,17 @@
 ---
-import Base from "../layouts/base.astro";
-import Navbar from "../components/shared/navbar.astro";
-import Hero from "../components/shared/hero.astro";
-
-import HowitworksGrid from "../components/content/howitworksGrid.astro";
-import IntroAndRules from "../components/content/introAndRules.astro";
-import Halloween from "../components/content/halloween.astro";
+import Default from "../layouts/default.astro";
+import Navigation from "../components/shared/content/navigation.astro";
+import Steps from "../components/shared/content/steps.astro";
+import Gallerypreview from "../components/shared/content/gallerypreview.astro";
+import Getstarted from "../components/shared/content/getstarted.astro";
+import Halloween from "../components/shared/content/Halloween.astro";
 ---
 
-<Base>
+<Default>
+  <Navigation />
+  <Steps />
   <Halloween />
-  <HowitworksGrid />
-  <IntroAndRules />
-</Base>
+  <Gallerypreview />
+
+  <Getstarted />
+</Default>

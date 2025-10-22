@@ -1,17 +1,29 @@
 ---
-const fuseringLogo = "/logos/fusering-logo-colour.svg";
+const fusering_logo = "/logos/FuseringLogo.svg";
+const hackclub_logo = "/logos/OrpheusFlagTop.svg";
+const carabiner_orpheus = "/images/CarabinerOrpheus.png";
 ---
 
+<!--Container for hero banner -->
 <div
-  class="z-3 md:h-[50vh] flex items-center justify-center bg-[url(/backgrounds/background_cube_pattern.png)] shadow-xl"
+  class="flex items-center justify-center w-full bg-[url(/ui/HeroBackground.png)] bg-bottom bg-cover h-[80vh] md:h-[55vh] md:bg-cover"
 >
-  <!-- Centre card for logo and title -->
-  <div
-    class="md:h-fit w-fit flex items-center justify-center flex-col md:flex-row md:bg-cadillac-600 rounded-4xl md:shadow-2xl p-[2rem] max-w-5xl mt-[4rem] mb-[4rem] md:m-[0rem]"
+  <!--Fusering Logo -->
+  <img src={fusering_logo} class="w-md p-[2rem]" />
+
+  <!--Hack Club Logo -->
+  <img src={hackclub_logo} class="w-[12rem] absolute top-0 left-0" />
+
+  <!-- Responsive design button, bottom for mobile, top right for medium and greater breakpoints -->
+  <a
+    href=""
+    class="w-fit h-fit bg-cadillac-500 absolute m-[2rem] pl-[2rem] pr-[2rem] pt-[0.5rem] pb-[0.5rem] rounded-4xl bottom-[15rem] md:top-0 md:right-0 text-cadillac-50 font-phantom_sans text-xl font-bold hover:shadow-2xl"
+    >Gallery</a
   >
-    <img src={fuseringLogo} class="p-[2rem] lg:mt-[0rem]" />
-    <h1 class="font-[Phantom_Sans] text-4xl text-horizon-50 font-Book">
-      "Design a keyring get your keyring and a carabiner to hang it from!"
-    </h1>
-  </div>
 </div>
+
+<!-- Fusering orpheus sticker, shown only on large breakpoints-->
+<img
+  src={carabiner_orpheus}
+  class="absolute w-[12rem] md:bottom-[35rem] lg:bottom-[20rem] lg:right-0 lg:m-[2rem] invisible lg:visible"
+/>

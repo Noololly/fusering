@@ -1,22 +1,11 @@
-# Fusering
-Design a Keyring, get your creation shipped to your door! This repo contains all the files necessary to build the fusering site, made using Astro and TailwindV4.
+# Fusering Website Redesign
 
-## Getting Started
+A website written for Hack Club's YSWS Fusering, written using Astro and TailwindCSS
 
-Install dependencies:
-```
-npm install
-```
+## Running this project
 
-Start a dev server:
+To start a local dev server:
+
 ```
 npm run dev
 ```
-
-## What's Fusering?
-Design, Ship, and Receive: Make a 3D keychain, we'll print it and send it to you!
-
-## License
-Fusering Website and Guide © 2025 by David Poole is licensed under CC BY-SA 4.0. 
-
-To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
