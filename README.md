@@ -1,6 +1,6 @@
-# Fusering Website Redesign
+# Fusering
 
-A website written for Hack Club's YSWS Fusering, written using Astro and TailwindCSS
+ Design a keyring in CAD, we'll ship it to you + stickers! 
 
 ## Running this project
 
