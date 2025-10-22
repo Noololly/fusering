@@ -1,12 +1,13 @@
 ---
 import Button from "../../reusable/button.astro";
+const { text, tip } = Astro.props;
 ---
 
 <div
   class="h-fit md:h-[45vh] flex flex-col items-center justify-center ml-[2rem] mr-[2rem]"
 >
   <h1 class="font-phantom_sans font-bold text-3xl text-cadillac-50 mb-[2rem]">
-    Design a keyring in CAD, we'll ship it to you + stickers!
+    {text}
   </h1>
   <div class="flex flex-col lg:flex-row">
     <Button text="Home" link="/" />
@@ -20,6 +21,6 @@ import Button from "../../reusable/button.astro";
     />
   </div>
   <h1 class="font-phantom_sans text-2xl text-cadillac-100 mb-[2rem]">
-    Scroll down for how to submit!
+    {tip}
   </h1>
 </div>
