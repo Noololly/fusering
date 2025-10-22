@@ -1,6 +1,0 @@
-// Fix issue with @theme directive
-{
-  "css.validate": false,
-  "scss.validate": false,
-  "less.validate": false
-}
