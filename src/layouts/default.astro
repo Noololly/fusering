@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+import Head from "../components/shared/head.astro";
+import Hero from "../components/shared/hero.astro";
+import Footer from "../components/shared/footer.astro";
+---
+
+<html>
+  <head>
+    <Head />
+  </head>
+
+  <body class="bg-cadillac-600">
+    <Hero />
+    <slot />
+    <Footer />
+  </body>
+</html>
