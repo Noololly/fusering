@@ -2,10 +2,13 @@
 import Default from "../layouts/default.astro";
 import Navigation from "../components/shared/content/navigation.astro";
 import Getstarted from "../components/shared/content/getstarted.astro";
+import { Image } from 'astro:assets';
 
 interface GalleryItem {
   name: string;
   imageUrl: string;
+  width?: number;
+  height?: number;
 }
 
 let galleryItems: GalleryItem[] = [];
@@ -29,10 +32,16 @@ if (AIRTABLE_API_KEY && AIRTABLE_BASE_ID) {
         .map((record) => {
           const attachments =
             record.fields?.["Render"] || record.fields?.["Image"];
-          const imageUrl = Array.isArray(attachments)
-            ? attachments[0]?.url
+          const attachment = Array.isArray(attachments)
+            ? attachments[0]
             : attachments;
-          return { name: record.fields?.["Name"] ?? "Untitled Project", imageUrl };
+          const imageUrl = attachment?.url ?? attachment;
+          return {
+            name: record.fields?.["Name"] ?? "Untitled Project",
+            imageUrl,
+            width: attachment?.width,
+            height: attachment?.height,
+          };
         })
         .filter((item) => item.imageUrl);
     }
@@ -41,7 +50,7 @@ if (AIRTABLE_API_KEY && AIRTABLE_BASE_ID) {
   }
 }
 
-if (galleryItems.length === 0) {
+if (galleryItems.length === 0) { // fall back on /public
   galleryItems = [
     { name: "Gallery Preview 1", imageUrl: "/images/GalleryPreview1.webp" },
     { name: "Gallery Preview 2", imageUrl: "/images/GalleryPreview2.webp" },
@@ -67,11 +76,15 @@ if (galleryItems.length === 0) {
     >
       {
         galleryItems.map((item) => (
-          <div class="bg-cadillac-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-            <img
+          <div class="bg-cadillac-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 aspect-square p-3 flex items-center justify-center">
+            <Image
               src={item.imageUrl}
+              width={item.width}
+              height={item.height}
               alt={`Fusering project: ${item.name}`}
-              class="w-full aspect-square object-cover"
+              class="w-full h-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))
